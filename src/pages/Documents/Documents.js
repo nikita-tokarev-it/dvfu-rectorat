@@ -1,51 +1,61 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { getDocuments } from '../../api/documents';
 import './Documents.css';
 
 const Documents = () => {
-  const documents = [
-    {
-      category: 'История',
-      items: [
-        { title: 'История создания Совета ректоров вузов ДФО', file: 'history.pdf', date: '2020' },
-        { title: 'Основные этапы развития', file: 'stages.pdf', date: '2021' },
-      ]
-    },
-    {
-      category: 'Учредительные документы',
-      items: [
-        { title: 'Положение о Совете ректоров вузов ДФО', file: 'regulation.pdf', date: '2024' },
-        { title: 'Устав Совета ректоров вузов ДФО', file: 'charter.pdf', date: '2024' },
-        { title: 'Решение о создании Совета', file: 'decision.pdf', date: '2019' },
-      ]
-    },
-    {
-      category: 'Решения Совета',
-      items: [
-        { title: 'Протокол заседания №12 от 15.11.2024', file: 'protocol_12.pdf', date: '15.11.2024' },
-        { title: 'Протокол заседания №11 от 10.10.2024', file: 'protocol_11.pdf', date: '10.10.2024' },
-        { title: 'Протокол заседания №10 от 05.09.2024', file: 'protocol_10.pdf', date: '05.09.2024' },
-      ]
-    },
-  ];
+  const [documents, setDocuments] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadDocuments = async () => {
+      try {
+        const data = await getDocuments();
+        const grouped = data.reduce((acc, doc) => {
+          const existing = acc.find(s => s.category === doc.category);
+          if (existing) {
+            existing.items.push(doc);
+          } else {
+            acc.push({ category: doc.category, items: [doc] });
+          }
+          return acc;
+        }, []);
+        setDocuments(grouped);
+      } catch (err) {
+        console.error('Ошибка загрузки:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadDocuments();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="documents">
+        <h1 className="page-title">Документы</h1>
+        <p style={{ textAlign: 'center', padding: '40px', color: '#666' }}>Загрузка...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="documents">
       <h1 className="page-title">Документы</h1>
-      
+
       <div className="documents-intro">
         <p>
-          В данном разделе представлена общая информация о Совете ректоров вузов 
-          Дальневосточного федерального округа, учредительные документы, история создания, 
+          В данном разделе представлена общая информация о Совете ректоров вузов
+          Дальневосточного федерального округа, учредительные документы, история создания,
           положение, устав и решения Совета.
         </p>
       </div>
-      
+
       {documents.map((section, index) => (
         <div key={index} className="document-section">
           <h2 className="section-heading">{section.category}</h2>
           <div className="documents-list">
-            {section.items.map((doc, docIndex) => (
-              <div key={docIndex} className="document-item">
+            {section.items.map((doc) => (
+              <div key={doc.id} className="document-item">
                 <div className="document-icon">
                   <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#2B5A8E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -77,4 +87,3 @@ const Documents = () => {
 };
 
 export default Documents;
-

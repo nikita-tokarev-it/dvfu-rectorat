@@ -1,0 +1,273 @@
+{
+  "users": [
+    {
+      "id": "1c783a79-1573-4ecb-8f25-70e6e1a0ceb6",
+      "username": "admin",
+      "email": "admin@dvfu-rectorat.ru",
+      "passwordHash": "$2a$10$DEbRI4NJwPnXWd/H6ldgROf.Rna6Q4TEO4w0TM/ujLnWz8E7LBj2W",
+      "role": "admin",
+      "createdAt": "2026-02-02T14:04:30.182Z"
+    },
+    {
+      "id": "12ffd2da-d072-4b50-b29c-48ed5304a7a9",
+      "username": "editor",
+      "email": "editor@dvfu-rectorat.ru",
+      "passwordHash": "$2a$10$pM9FEvYji3CB99OpSvYh6emvgpkNqAZNZamBQfqa4PN2wDYZI31Re",
+      "role": "editor",
+      "createdAt": "2026-02-02T14:04:30.283Z"
+    }
+  ],
+  "events": [
+    {
+      "id": "d3809615-0696-4578-bc0f-ee5a17b11521",
+      "type": "event",
+      "title": "Заседание совета ректора ДВО",
+      "date": "15 ноября 2024",
+      "image": "https://via.placeholder.com/600x350/1e4976/FFFFFF?text=Заседание",
+      "description": "Состоялось очередное заседание Совета ректоров вузов Дальневосточного федерального округа. На повестке дня были рассмотрены вопросы развития научного потенциала региона и укрепления межвузовского сотрудничества.",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.283Z",
+      "updatedAt": "2026-02-02T14:19:01.511Z"
+    },
+    {
+      "id": "a3f50cd5-8a70-49e0-84f1-fecc7dfd26ab",
+      "type": "news",
+      "title": "Новое соглашение о сотрудничестве",
+      "date": "10 ноября 2024",
+      "image": "https://via.placeholder.com/600x350/1e4976/FFFFFF?text=Соглашение",
+      "description": "Подписано важное соглашение между вузами Дальневосточного федерального округа о совместных научных исследованиях и обмене студентами.",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.283Z",
+      "updatedAt": "2026-02-02T14:04:30.283Z"
+    },
+    {
+      "id": "ee40afa3-bf3c-4d82-bb1d-dd3a2eb963e2",
+      "type": "event",
+      "title": "Международная конференция по образованию",
+      "date": "5 ноября 2024",
+      "image": "https://via.placeholder.com/600x350/1e4976/FFFFFF?text=Конференция",
+      "description": "Проведена масштабная международная конференция, посвященная современным тенденциям в высшем образовании. В мероприятии приняли участие представители ведущих университетов.",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.283Z",
+      "updatedAt": "2026-02-02T14:04:30.283Z"
+    },
+    {
+      "id": "35561e1a-d79a-4905-a7b2-3b9566221a3c",
+      "type": "news",
+      "title": "Новая программа поддержки молодых ученых",
+      "date": "1 ноября 2024",
+      "image": "https://via.placeholder.com/600x350/1e4976/FFFFFF?text=Программа",
+      "description": "Совет ректоров утвердил новую программу поддержки молодых ученых Дальневосточного федерального округа. Программа предусматривает гранты на научные исследования.",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.283Z",
+      "updatedAt": "2026-02-02T14:04:30.283Z"
+    },
+    {
+      "id": "e715f943-db80-424e-82c2-669121881ed0",
+      "type": "event",
+      "title": "Круглый стол по цифровизации образования",
+      "date": "25 октября 2024",
+      "image": "https://via.placeholder.com/600x350/1e4976/FFFFFF?text=Круглый+стол",
+      "description": "Проведен круглый стол с участием руководителей IT-подразделений вузов по вопросам внедрения цифровых технологий в образовательный процесс.",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.283Z",
+      "updatedAt": "2026-02-02T14:04:30.283Z"
+    },
+    {
+      "id": "7959579e-2090-4a5f-aec3-62b3cddfd58c",
+      "type": "news",
+      "title": "Результаты конкурса студенческих проектов",
+      "date": "20 октября 2024",
+      "image": "https://via.placeholder.com/600x350/1e4976/FFFFFF?text=Конкурс",
+      "description": "Подведены итоги ежегодного конкурса студенческих проектов. Победители получили гранты на реализацию своих инициатив.",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.284Z",
+      "updatedAt": "2026-02-02T14:04:30.284Z"
+    }
+  ],
+  "pressReleases": [
+    {
+      "id": "be5b8d4f-4429-46a4-8877-56c76b61eb44",
+      "title": "Итоги заседания Совета ректоров ДФО",
+      "date": "15.11.2024",
+      "content": "Краткое описание пресс-релиза...",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.284Z",
+      "updatedAt": "2026-02-02T14:04:30.284Z"
+    },
+    {
+      "id": "4270e504-41f0-4b6a-835d-b6792d2179d4",
+      "title": "Новая программа развития образования",
+      "date": "10.11.2024",
+      "content": "Краткое описание пресс-релиза...",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.284Z",
+      "updatedAt": "2026-02-02T14:04:30.284Z"
+    },
+    {
+      "id": "3c773017-aebe-4bad-9542-0d5da9f59677",
+      "title": "Подписание соглашения о сотрудничестве",
+      "date": "05.11.2024",
+      "content": "Краткое описание пресс-релиза...",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.284Z",
+      "updatedAt": "2026-02-02T14:04:30.284Z"
+    }
+  ],
+  "announcements": [
+    {
+      "id": "f9d9a2f7-8abe-459a-8c1f-5d8a0b86cf2e",
+      "title": "Предстоящее заседание Совета ректоров",
+      "date": "25.11.2024",
+      "content": "Информация о предстоящем мероприятии...",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.284Z",
+      "updatedAt": "2026-02-02T14:04:30.284Z"
+    },
+    {
+      "id": "343ed77d-9e49-4af0-a350-2d7cad8f1959",
+      "title": "Международная конференция",
+      "date": "01.12.2024",
+      "content": "Анонс международной конференции...",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.284Z",
+      "updatedAt": "2026-02-02T14:04:30.284Z"
+    }
+  ],
+  "photos": [
+    {
+      "id": "08e88bc4-89d2-4770-811f-7d6f0bfc67eb",
+      "title": "Заседание Совета ректоров",
+      "date": "15.11.2024",
+      "image": "https://via.placeholder.com/400x300/1e4976/FFFFFF?text=Фото+1",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.284Z"
+    },
+    {
+      "id": "4b383102-10ee-48cb-8f57-6b491b2d914d",
+      "title": "Подписание соглашения",
+      "date": "10.11.2024",
+      "image": "https://via.placeholder.com/400x300/1e4976/FFFFFF?text=Фото+2",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.284Z"
+    },
+    {
+      "id": "bd25583c-a7b3-4f66-89f7-786b7634608e",
+      "title": "Конференция по образованию",
+      "date": "05.11.2024",
+      "image": "https://via.placeholder.com/400x300/1e4976/FFFFFF?text=Фото+3",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.284Z"
+    },
+    {
+      "id": "4d1e92eb-7ea6-4c2e-b3c9-885215b3bbdd",
+      "title": "Круглый стол",
+      "date": "01.11.2024",
+      "image": "https://via.placeholder.com/400x300/1e4976/FFFFFF?text=Фото+4",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.284Z"
+    }
+  ],
+  "videos": [
+    {
+      "id": "1404403f-19b9-45ab-a7a5-ec1027233e47",
+      "title": "Репортаж с заседания Совета",
+      "date": "15.11.2024",
+      "thumbnail": "https://via.placeholder.com/400x250/1e4976/FFFFFF?text=Видео+1",
+      "videoUrl": "",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.284Z"
+    },
+    {
+      "id": "6bdea4b1-d42e-48e6-8af3-0d02563cd20e",
+      "title": "Интервью с председателем",
+      "date": "10.11.2024",
+      "thumbnail": "https://via.placeholder.com/400x250/1e4976/FFFFFF?text=Видео+2",
+      "videoUrl": "",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.284Z"
+    }
+  ],
+  "documents": [
+    {
+      "id": "5b116443-ca92-4b8e-ad7c-f53e2db4d79f",
+      "category": "История",
+      "title": "История создания Совета ректоров вузов ДФО",
+      "file": "history.pdf",
+      "date": "2020",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.284Z",
+      "updatedAt": "2026-02-02T14:04:30.284Z"
+    },
+    {
+      "id": "8e420b57-ca8f-427e-aaa8-e982f8fec8e0",
+      "category": "История",
+      "title": "Основные этапы развития",
+      "file": "stages.pdf",
+      "date": "2021",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.284Z",
+      "updatedAt": "2026-02-02T14:04:30.284Z"
+    },
+    {
+      "id": "c7886c4c-ed71-4ec6-a1f6-c65ba977fc68",
+      "category": "Учредительные документы",
+      "title": "Положение о Совете ректоров вузов ДФО",
+      "file": "regulation.pdf",
+      "date": "2024",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.284Z",
+      "updatedAt": "2026-02-02T14:04:30.284Z"
+    },
+    {
+      "id": "77408f9d-6aa8-4880-8975-89ed588939db",
+      "category": "Учредительные документы",
+      "title": "Устав Совета ректоров вузов ДФО",
+      "file": "charter.pdf",
+      "date": "2024",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.284Z",
+      "updatedAt": "2026-02-02T14:04:30.284Z"
+    },
+    {
+      "id": "017c5e66-64d9-4c03-b98a-0bbf67778743",
+      "category": "Учредительные документы",
+      "title": "Решение о создании Совета",
+      "file": "decision.pdf",
+      "date": "2019",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.284Z",
+      "updatedAt": "2026-02-02T14:04:30.284Z"
+    },
+    {
+      "id": "c447a208-ed93-4d8a-9089-c699727008e4",
+      "category": "Решения Совета",
+      "title": "Протокол заседания №12 от 15.11.2024",
+      "file": "protocol_12.pdf",
+      "date": "15.11.2024",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.284Z",
+      "updatedAt": "2026-02-02T14:04:30.284Z"
+    },
+    {
+      "id": "22b4698c-2ac5-4857-b5c9-379701e3a73d",
+      "category": "Решения Совета",
+      "title": "Протокол заседания №11 от 10.10.2024",
+      "file": "protocol_11.pdf",
+      "date": "10.10.2024",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.284Z",
+      "updatedAt": "2026-02-02T14:04:30.284Z"
+    },
+    {
+      "id": "60c0eeac-a1d6-420d-9113-e1b025cc2bb5",
+      "category": "Решения Совета",
+      "title": "Протокол заседания №10 от 05.09.2024",
+      "file": "protocol_10.pdf",
+      "date": "05.09.2024",
+      "published": true,
+      "createdAt": "2026-02-02T14:04:30.284Z",
+      "updatedAt": "2026-02-02T14:04:30.284Z"
+    }
+  ]
+}

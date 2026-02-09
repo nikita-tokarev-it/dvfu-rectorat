@@ -1,0 +1,9 @@
+.inline-form-wrapper {
+  margin-bottom: 24px;
+}
+
+.inline-form-wrapper .admin-form h3 {
+  color: #1e4976;
+  margin-bottom: 20px;
+  font-size: 18px;
+}

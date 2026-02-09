@@ -50,6 +50,12 @@
   text-decoration: underline;
 }
 
+.footer-admin-link {
+  font-size: 12px !important;
+  opacity: 0.6;
+  margin-top: 10px !important;
+}
+
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;

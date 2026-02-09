@@ -1,0 +1,31 @@
+const express = require('express');
+const cors = require('cors');
+const path = require('path');
+
+const app = express();
+const PORT = 5001;
+
+app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(express.json());
+
+// Public routes
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/events', require('./routes/events').router);
+app.use('/api/press-releases', require('./routes/pressReleases').router);
+app.use('/api/announcements', require('./routes/announcements').router);
+app.use('/api/photos', require('./routes/photos').router);
+app.use('/api/videos', require('./routes/videos').router);
+app.use('/api/documents', require('./routes/documents').router);
+
+// Admin routes
+app.use('/api/admin/events', require('./routes/events').adminRouter);
+app.use('/api/admin/press-releases', require('./routes/pressReleases').adminRouter);
+app.use('/api/admin/announcements', require('./routes/announcements').adminRouter);
+app.use('/api/admin/photos', require('./routes/photos').adminRouter);
+app.use('/api/admin/videos', require('./routes/videos').adminRouter);
+app.use('/api/admin/documents', require('./routes/documents').adminRouter);
+app.use('/api/admin/users', require('./routes/users'));
+
+app.listen(PORT, () => {
+  console.log(`Сервер запущен на порту ${PORT}`);
+});

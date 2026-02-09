@@ -1,69 +1,83 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { getPressReleases, getAnnouncements, getPhotos, getVideos } from '../../api/press';
 import './Press.css';
 
 const Press = () => {
   const [activeTab, setActiveTab] = useState('releases');
-  
-  const pressReleases = [
-    { id: 1, title: 'Итоги заседания Совета ректоров ДФО', date: '15.11.2024', content: 'Краткое описание пресс-релиза...' },
-    { id: 2, title: 'Новая программа развития образования', date: '10.11.2024', content: 'Краткое описание пресс-релиза...' },
-    { id: 3, title: 'Подписание соглашения о сотрудничестве', date: '05.11.2024', content: 'Краткое описание пресс-релиза...' },
-  ];
-  
-  const announcements = [
-    { id: 1, title: 'Предстоящее заседание Совета ректоров', date: '25.11.2024', content: 'Информация о предстоящем мероприятии...' },
-    { id: 2, title: 'Международная конференция', date: '01.12.2024', content: 'Анонс международной конференции...' },
-  ];
-  
-  const photos = [
-    { id: 1, title: 'Заседание Совета ректоров', date: '15.11.2024', image: 'https://via.placeholder.com/400x300/1e4976/FFFFFF?text=Фото+1' },
-    { id: 2, title: 'Подписание соглашения', date: '10.11.2024', image: 'https://via.placeholder.com/400x300/1e4976/FFFFFF?text=Фото+2' },
-    { id: 3, title: 'Конференция по образованию', date: '05.11.2024', image: 'https://via.placeholder.com/400x300/1e4976/FFFFFF?text=Фото+3' },
-    { id: 4, title: 'Круглый стол', date: '01.11.2024', image: 'https://via.placeholder.com/400x300/1e4976/FFFFFF?text=Фото+4' },
-  ];
-  
-  const videos = [
-    { id: 1, title: 'Репортаж с заседания Совета', date: '15.11.2024', thumbnail: 'https://via.placeholder.com/400x250/1e4976/FFFFFF?text=Видео+1' },
-    { id: 2, title: 'Интервью с председателем', date: '10.11.2024', thumbnail: 'https://via.placeholder.com/400x250/1e4976/FFFFFF?text=Видео+2' },
-  ];
+  const [pressReleases, setPressReleases] = useState([]);
+  const [announcements, setAnnouncements] = useState([]);
+  const [photos, setPhotos] = useState([]);
+  const [videos, setVideos] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const [pr, an, ph, vi] = await Promise.all([
+          getPressReleases(),
+          getAnnouncements(),
+          getPhotos(),
+          getVideos(),
+        ]);
+        setPressReleases(pr);
+        setAnnouncements(an);
+        setPhotos(ph);
+        setVideos(vi);
+      } catch (err) {
+        console.error('Ошибка загрузки:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="press">
+        <h1 className="page-title">Для прессы</h1>
+        <p style={{ textAlign: 'center', padding: '40px', color: '#666' }}>Загрузка...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="press">
       <h1 className="page-title">Для прессы</h1>
-      
+
       <div className="tabs">
-        <button 
+        <button
           className={`tab-button ${activeTab === 'releases' ? 'active' : ''}`}
           onClick={() => setActiveTab('releases')}
         >
           Пресс-релизы
         </button>
-        <button 
+        <button
           className={`tab-button ${activeTab === 'announcements' ? 'active' : ''}`}
           onClick={() => setActiveTab('announcements')}
         >
           Анонсы
         </button>
-        <button 
+        <button
           className={`tab-button ${activeTab === 'photos' ? 'active' : ''}`}
           onClick={() => setActiveTab('photos')}
         >
           Фотоматериалы
         </button>
-        <button 
+        <button
           className={`tab-button ${activeTab === 'videos' ? 'active' : ''}`}
           onClick={() => setActiveTab('videos')}
         >
           Видеоматериалы
         </button>
-        <button 
+        <button
           className={`tab-button ${activeTab === 'contacts' ? 'active' : ''}`}
           onClick={() => setActiveTab('contacts')}
         >
           Контакты для СМИ
         </button>
       </div>
-      
+
       <div className="tab-content">
         {activeTab === 'releases' && (
           <div className="press-list">
@@ -79,7 +93,7 @@ const Press = () => {
             ))}
           </div>
         )}
-        
+
         {activeTab === 'announcements' && (
           <div className="press-list">
             {announcements.map(item => (
@@ -94,7 +108,7 @@ const Press = () => {
             ))}
           </div>
         )}
-        
+
         {activeTab === 'photos' && (
           <div className="media-grid">
             {photos.map(photo => (
@@ -108,7 +122,7 @@ const Press = () => {
             ))}
           </div>
         )}
-        
+
         {activeTab === 'videos' && (
           <div className="media-grid">
             {videos.map(video => (
@@ -125,7 +139,7 @@ const Press = () => {
             ))}
           </div>
         )}
-        
+
         {activeTab === 'contacts' && (
           <div className="press-contacts">
             <h2>Контактная информация для СМИ</h2>
@@ -158,4 +172,3 @@ const Press = () => {
 };
 
 export default Press;
-
