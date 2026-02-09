@@ -1,7 +1,13 @@
 import axios from 'axios';
 
+// Для Vercel используем относительный путь /api
+// Для локальной разработки используем localhost:5001
+const baseURL = process.env.NODE_ENV === 'production'
+  ? '/api'
+  : 'http://localhost:5001/api';
+
 const client = axios.create({
-  baseURL: 'http://localhost:5001/api',
+  baseURL,
 });
 
 client.interceptors.request.use((config) => {
